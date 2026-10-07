@@ -44,11 +44,11 @@ body::before {
     pointer-events: none;
 }
 
-/* ===== البوستر ===== 
+/* ===== البوستر =====*/
 .poster {
     max-width: 800px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.88);  /* ← شفاف 88% */
+ background: rgba(255, 255, 255, 0.88);  /* ← شفاف 88% */
     backdrop-filter: blur(10px);            /* ← تمويه إضافي */
     border-radius: 25px;
     overflow: hidden;
@@ -56,8 +56,6 @@ body::before {
     position: relative;
     z-index: 1;
 } 
-}
-
 /* ===== الهيدر ===== */
 .poster-header {
     background: linear-gradient(135deg, var(--dark-blue), var(--blue));
