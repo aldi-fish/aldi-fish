@@ -14,6 +14,8 @@
     box-sizing: border-box;
     font-family: 'Tahoma', 'Arial', sans-serif;
 }
+
+/* ===== الخلفية مع التمويه ===== */
 body {
     background: 
         linear-gradient(rgba(10, 61, 98, 0.5), rgba(10, 61, 98, 0.5)), 
@@ -41,7 +43,6 @@ body::before {
     z-index: -1;
     pointer-events: none;
 }
-}
 
 /* ===== البوستر ===== */
 .poster {
@@ -52,6 +53,7 @@ body::before {
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
     position: relative;
+    z-index: 1;
 }
 
 /* ===== الهيدر ===== */
@@ -100,24 +102,18 @@ body::before {
 .poster-image {
     padding: 25px;
     background: var(--white);
+    text-align: center;
 }
 
 .poster-image img {
     width: 100%;
-    max-width: 350px;
-    max-height: 400px;
+    max-width: 400px;
+    max-height: 350px;
     object-fit: cover;
     margin: 0 auto;
     display: block;
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-}
-
-.poster-image {
-    padding: 25px;
-    background: var(--white);
-    text-align: center;
-} 
 }
 
 /* ===== الميزات ===== */
@@ -361,4 +357,4 @@ body::before {
     .poster-note {
         font-size: 0.9rem;
     }
-        }
+}
