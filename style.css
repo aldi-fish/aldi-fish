@@ -1,4 +1,4 @@
-/* الألوان الأساسية */
+/* ===== الألوان الأساسية ===== */
 :root {
     --dark-blue: #0a3d62;
     --blue: #1e5f8c;
@@ -14,6 +14,8 @@
     box-sizing: border-box;
     font-family: 'Tahoma', 'Arial', sans-serif;
 }
+
+/* ===== الخلفية مع التمويه ===== */
 body {
     background: linear-gradient(rgba(10, 61, 98, 0.5), rgba(10, 61, 98, 0.5)), 
                 url('cover.jpg');
@@ -25,10 +27,9 @@ body {
     line-height: 1.7;
     min-height: 100vh;
     position: relative;
-};
 }
 
-/* طبقة التمويه (Blur) للخلفية */
+/* طبقة التمويه */
 body::before {
     content: '';
     position: fixed;
@@ -41,24 +42,30 @@ body::before {
     z-index: -1;
     pointer-events: none;
 }
+
 .container {
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* الهيدر */
+/* ===== الهيدر ===== */
 header {
-    background: linear-gradient(135deg, var(--dark-blue), var(--blue));
+    background: rgba(10, 61, 98, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     color: var(--white);
     text-align: center;
-    padding: 40px 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    padding: 50px 20px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
 }
 
 header h1 {
     font-size: 2.5rem;
     margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
 }
 
 .tagline {
@@ -66,24 +73,32 @@ header h1 {
     opacity: 0.95;
 }
 
-/* الصورة الرئيسية */
+/* ===== الصورة الرئيسية ===== */
 .hero {
     max-width: 900px;
-    margin: -20px auto 40px;
+    margin: 40px auto;
     padding: 0 20px;
+    position: relative;
+    z-index: 1;
 }
 
 .hero img {
     width: 100%;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+    border: 3px solid rgba(255,255,255,0.3);
 }
 
-/* الأقسام */
+/* ===== الأقسام ===== */
 section {
     max-width: 1100px;
-    margin: 50px auto;
-    padding: 0 20px;
+    margin: 40px auto;
+    padding: 40px 25px;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    position: relative;
+    z-index: 1;
 }
 
 section h2 {
@@ -104,7 +119,7 @@ section h2::after {
     border-radius: 2px;
 }
 
-/* شبكة الأسماك */
+/* ===== شبكة الأسماك ===== */
 .fish-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -132,40 +147,114 @@ section h2::after {
     margin-bottom: 10px;
 }
 
-/* الأسعار */
+/* ===== الأسعار ===== */
+.prices-subtitle {
+    text-align: center;
+    color: var(--blue);
+    font-size: 1.1rem;
+    margin-top: -20px;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
 .price-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 20px;
 }
 
 .price-card {
     background: linear-gradient(135deg, var(--blue), var(--dark-blue));
     color: var(--white);
-    padding: 30px;
+    padding: 25px 20px;
     border-radius: 15px;
     text-align: center;
     box-shadow: 0 5px 20px rgba(10, 61, 98, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.price-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(10, 61, 98, 0.5);
+}
+
+.fish-icon {
+    font-size: 3rem;
+    margin-bottom: 10px;
 }
 
 .price-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin-bottom: 15px;
+    color: var(--white);
+    font-weight: bold;
 }
 
 .price {
     font-size: 2rem;
     font-weight: bold;
     color: var(--gold);
+    margin: 10px 0;
 }
 
-/* التواصل */
+.price span {
+    font-size: 1rem;
+    color: var(--white);
+    opacity: 0.9;
+}
+
+.unit {
+    font-size: 0.95rem;
+    color: var(--white);
+    opacity: 0.85;
+    margin-top: 5px;
+}
+
+/* ===== زر طلب نوع آخر ===== */
+.order-more {
+    background: var(--white);
+    border: 3px dashed var(--light-blue);
+    border-radius: 20px;
+    padding: 30px 20px;
+    text-align: center;
+    margin-top: 40px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.order-more h3 {
+    color: var(--dark-blue);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.order-more p {
+    color: #555;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.last-update {
+    text-align: center;
+    color: var(--blue);
+    margin-top: 25px;
+    font-size: 1rem;
+    background: #e8f4f8;
+    display: block;
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.note {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--blue);
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* ===== التواصل ===== */
 .contact {
     text-align: center;
-    background: var(--white);
-    padding: 40px 20px;
-    border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
 }
 
 .contact p {
@@ -191,32 +280,30 @@ section h2::after {
     font-weight: bold;
     transition: transform 0.3s, box-shadow 0.3s;
     color: var(--white);
+    border: none;
+    cursor: pointer;
 }
 
 .btn:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
 .call { background: #27ae60; }
 .whatsapp { background: #25d366; }
 .facebook { background: #1877f2; }
 
-.note {
-    text-align: center;
-    font-size: 1.1rem;
-    color: var(--blue);
-    margin-top: 20px;
-    font-style: italic;
-}
-
-/* الفوتر */
+/* ===== الفوتر ===== */
 footer {
-    background: var(--dark-blue);
+    background: rgba(10, 61, 98, 0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     color: var(--white);
     text-align: center;
     padding: 25px 20px;
     margin-top: 60px;
+    position: relative;
+    z-index: 1;
 }
 
 footer p {
@@ -224,11 +311,16 @@ footer p {
     opacity: 0.9;
 }
 
-/* الموبايل */
+/* ===== الموبايل ===== */
 @media (max-width: 600px) {
     header h1 { font-size: 1.8rem; }
     .tagline { font-size: 1rem; }
+    section { padding: 25px 15px; margin: 25px auto; }
     section h2 { font-size: 1.5rem; }
     .price { font-size: 1.5rem; }
+    .fish-icon { font-size: 2.5rem; }
+    .price-card h3 { font-size: 1.3rem; }
+    .order-more h3 { font-size: 1.2rem; }
+    .order-more p { font-size: 1rem; }
     .btn { padding: 12px 22px; font-size: 1rem; }
-}
+    }
