@@ -1,0 +1,214 @@
+/* الألوان الأساسية */
+:root {
+    --dark-blue: #0a3d62;
+    --blue: #1e5f8c;
+    --light-blue: #3c8dbc;
+    --white: #ffffff;
+    --gold: #f39c12;
+    --light-bg: #f4f9fc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tahoma', 'Arial', sans-serif;
+}
+
+body {
+    background: var(--light-bg);
+    color: #333;
+    line-height: 1.7;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* الهيدر */
+header {
+    background: linear-gradient(135deg, var(--dark-blue), var(--blue));
+    color: var(--white);
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+/* الصورة الرئيسية */
+.hero {
+    max-width: 900px;
+    margin: -20px auto 40px;
+    padding: 0 20px;
+}
+
+.hero img {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+/* الأقسام */
+section {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+section h2 {
+    text-align: center;
+    color: var(--dark-blue);
+    font-size: 2rem;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--gold);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* شبكة الأسماك */
+.fish-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.fish-card {
+    background: var(--white);
+    padding: 30px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-top: 5px solid var(--light-blue);
+}
+
+.fish-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.fish-card h3 {
+    color: var(--dark-blue);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* الأسعار */
+.price-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.price-card {
+    background: linear-gradient(135deg, var(--blue), var(--dark-blue));
+    color: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(10, 61, 98, 0.3);
+}
+
+.price-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--gold);
+}
+
+/* التواصل */
+.contact {
+    text-align: center;
+    background: var(--white);
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.contact p {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: var(--blue);
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: var(--white);
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.call { background: #27ae60; }
+.whatsapp { background: #25d366; }
+.facebook { background: #1877f2; }
+
+.note {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--blue);
+    margin-top: 20px;
+    font-style: italic;
+}
+
+/* الفوتر */
+footer {
+    background: var(--dark-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 60px;
+}
+
+footer p {
+    margin: 5px 0;
+    opacity: 0.9;
+}
+
+/* الموبايل */
+@media (max-width: 600px) {
+    header h1 { font-size: 1.8rem; }
+    .tagline { font-size: 1rem; }
+    section h2 { font-size: 1.5rem; }
+    .price { font-size: 1.5rem; }
+    .btn { padding: 12px 22px; font-size: 1rem; }
+}
