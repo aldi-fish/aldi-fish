@@ -85,9 +85,20 @@ body {
 
 .poster-image img {
     width: 100%;
+    max-width: 350px;
+    max-height: 400px;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
     border-radius: 15px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-    display: block;
+}
+
+.poster-image {
+    padding: 25px;
+    background: var(--white);
+    text-align: center;
+} 
 }
 
 /* ===== الميزات ===== */
