@@ -14,6 +14,7 @@ if (current >= target) { current = target; clearInterval(timer); }
 counterElement.textContent = Math.floor(current).toLocaleString('ar-EG');
 }, 40);
 });
+// التاريخ والوقت
 function updateDateTime() {
 var now = new Date();
 var days = ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
@@ -35,5 +36,21 @@ var timeElement = document.getElementById('current-time');
 if (dateElement) dateElement.textContent = dateStr;
 if (timeElement) timeElement.textContent = timeStr;
 }
+
 updateDateTime();
 setInterval(updateDateTime, 60000);
+
+// عداد الزوار
+document.addEventListener('DOMContentLoaded', function() {
+var count = localStorage.getItem('visitorCount');
+if (count === null) {
+count = 76;
+} else {
+count = parseInt(count) + 1;
+}
+localStorage.setItem('visitorCount', count);
+var counterElement = document.getElementById('visitor-count');
+if (counterElement) {
+counterElement.textContent = count.toLocaleString('ar-EG');
+}
+});
