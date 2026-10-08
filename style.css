@@ -122,7 +122,7 @@ margin-right: auto;
 .fish-card {
 background: rgba(10, 37, 64, 0.75);
 border-radius: 15px;
-padding: 20px 10px;
+padding: 40px 30px;
 border: 1px solid rgba(243, 156, 18, 0.3);
 opacity: 0;
 animation: fadeUp 0.6s ease-out forwards;
