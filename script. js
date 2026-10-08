@@ -37,3 +37,15 @@ if (timeElement) timeElement.textContent = timeStr;
 }
 updateDateTime();
 setInterval(updateDateTime, 60000);
+// عداد زوار حقيقي
+fetch('https://api.countapi.xyz/hit/aldi-fish-visitors/visits')
+.then(response => response.json())
+.then(data => {
+var counterElement = document.getElementById('visitor-count');
+if (counterElement) {
+counterElement.textContent = data.value.toLocaleString('ar-EG');
+}
+})
+.catch(error => {
+console.log('خطأ:', error);
+});
