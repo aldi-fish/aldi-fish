@@ -1,11 +1,10 @@
-/* ===== الألوان الأساسية ===== */
 :root {
-    --dark-blue: #0a3d62;
-    --blue: #1e5f8c;
-    --light-blue: #3c8dbc;
-    --white: #ffffff;
+    --blue-dark: #0a2540;
+    --blue: #0a3d62;
+    --blue-light: #1e5f8c;
     --gold: #f39c12;
-    --light-bg: #f4f9fc;
+    --gold-light: #ffd700;
+    --white: #ffffff;
 }
 
 * {
@@ -15,346 +14,129 @@
     font-family: 'Tahoma', 'Arial', sans-serif;
 }
 
-/* ===== الخلفية ===== */
+html {
+    background: #0a2540;
+}
+
 body {
-    background: 
-        linear-gradient(rgba(10, 61, 98, 0.5), rgba(10, 61, 98, 0.5)), 
-        url('background.jpg');
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: scroll;
     min-height: 100vh;
-    padding: 20px;
-    color: #333;
-    position: relative;
+    padding: 30px 20px;
+    background: linear-gradient(-45deg, #0a2540, #0a3d62, #1e5f8c, #0a2540);
+    background-size: 400% 400%;
+    background-attachment: fixed;
+    animation: bgMove 12s ease infinite;
+    color: #ffffff;
+    overflow-x: hidden;
 }
 
-/* طبقة التمويه */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
+@keyframes bgMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.page {
+    max-width: 500px;
     width: 100%;
-    height: 100%;
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-    z-index: -1;
-    pointer-events: none;
-}
-
-/* ===== البوستر =====*/
-.poster {
-    max-width: 800px;
     margin: 0 auto;
- background: rgba(255, 255, 255, 0.88);  /* ← شفاف 88% */
-    backdrop-filter: blur(10px);            /* ← تمويه إضافي */
-    border-radius: 25px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    position: relative;
-    z-index: 1;
-} 
-/* ===== الهيدر ===== */
-.poster-header {
-    background: linear-gradient(135deg, var(--dark-blue), var(--blue));
-    color: var(--white);
     text-align: center;
-    padding: 40px 20px 30px;
-    position: relative;
+    padding: 20px 0;
 }
 
-.fish-logo {
-    font-size: 4rem;
+.logo {
+    font-size: 5rem;
     margin-bottom: 10px;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+    display: inline-block;
     animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 10px 20px rgba(243, 156, 18, 0.5));
 }
 
 @keyframes float {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-18px); }
 }
 
-.poster-header h1 {
-    font-size: 2.8rem;
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
-    letter-spacing: 1px;
+.title {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #ffd700, #f39c12, #ffd700, #f39c12);
+    background-size: 300% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: shine 4s linear infinite;
+    filter: drop-shadow(0 0 25px rgba(243, 156, 18, 0.4));
 }
 
-.divider {
-    width: 80px;
+@keyframes shine {
+    to { background-position: 300% center; }
+}
+
+.line {
+    width: 90px;
     height: 4px;
-    background: var(--gold);
-    margin: 0 auto 15px;
+    background: linear-gradient(90deg, transparent, #f39c12, transparent);
+    margin: 0 auto 20px;
     border-radius: 2px;
 }
 
 .slogan {
-    font-size: 1.2rem;
-    opacity: 0.95;
+    font-size: 1.15rem;
+    color: #ffd700;
     font-style: italic;
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: fadeUp 1s ease-out 0.5s forwards;
 }
 
-/* ===== الصورة داخل البوستر ===== */
-.poster-image {
-    padding: 25px;
-    background: var(--white);
-    text-align: center;
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.poster-image img {
-    width: 90%;
-    max-width: 400px;
-    max-height: 300px;
-    object-fit: cover;
-    margin: 0 auto;
-    display: block;
-    border-radius: 15px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
-}
-
-/* ===== الميزات ===== */
 .features {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 40px;
     flex-wrap: wrap;
-    gap: 10px;
-    padding: 0 25px 25px;
 }
 
 .feature {
-    background: linear-gradient(135deg, #e8f4f8, #d4e8f0);
-    color: var(--dark-blue);
-    padding: 12px 20px;
-    border-radius: 50px;
+    flex: 1;
+    min-width: 100px;
+    max-width: 130px;
+    padding: 15px 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 1px solid rgba(243, 156, 18, 0.3);
+    transition: all 0.4s ease;
+    opacity: 0;
+    animation: fadeUp 0.8s ease-out forwards;
+}
+
+.feature:nth-child(1) { animation-delay: 0.6s; }
+.feature:nth-child(2) { animation-delay: 0.8s; }
+.feature:nth-child(3) { animation-delay: 1.0s; }
+
+.feature:hover {
+    background: rgba(243, 156, 18, 0.15);
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(243, 156, 18, 0.3);
+    border-color: #f39c12;
+}
+
+.feature span {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.feature p {
+    font-size: 0.85rem;
     font-weight: bold;
-    font-size: 0.95rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 3px 10px rgba(10, 61, 98, 0.1);
-}
-
-.feature-icon {
-    font-size: 1.2rem;
-}
-
-/* ===== الأسماك المتوفرة ===== */
-.poster-fish {
-    padding: 30px 25px;
-    background: var(--light-bg);
-    text-align: center;
-}
-
-.poster-fish h2 {
-    color: var(--dark-blue);
-    font-size: 1.6rem;
-    margin-bottom: 20px;
-}
-
-.fish-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-}
-
-.tag {
-    background: linear-gradient(135deg, var(--blue), var(--dark-blue));
-    color: var(--white);
-    padding: 10px 22px;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 1rem;
-    box-shadow: 0 4px 12px rgba(10, 61, 98, 0.3);
-    transition: transform 0.3s;
-}
-
-.tag:hover {
-    transform: scale(1.05);
-}
-
-.tag.highlight {
-    background: linear-gradient(135deg, var(--gold), #e67e22);
-    box-shadow: 0 4px 12px rgba(243, 156, 18, 0.4);
-}
-
-/* ===== التواصل ===== */
-.poster-contact {
-    padding: 30px 25px;
-    background: var(--white);
-    text-align: center;
-}
-
-.poster-contact h2 {
-    color: var(--dark-blue);
-    font-size: 1.6rem;
-    margin-bottom: 20px;
-}
-
-.phones {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.phone-btn {
-    background: linear-gradient(135deg, var(--dark-blue), var(--blue));
-    color: var(--white);
-    padding: 15px 25px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1rem;
-    box-shadow: 0 5px 15px rgba(10, 61, 98, 0.3);
-    transition: transform 0.3s, box-shadow 0.3s;
-    direction: ltr;
-}
-
-.phone-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(10, 61, 98, 0.4);
-}
-
-.social {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-}
-
-.facebook-btn,
-.whatsapp-btn {
-    padding: 14px 25px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    color: var(--white);
-    font-size: 1rem;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-}
-
-.facebook-btn {
-    background: #1877f2;
-}
-
-.whatsapp-btn {
-    background: #25d366;
-}
-
-.facebook-btn:hover,
-.whatsapp-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
-/* ===== العنوان ===== */
-.poster-location {
-    padding: 20px 25px;
-    background: var(--light-bg);
-    text-align: center;
-}
-
-.poster-location p {
-    color: var(--dark-blue);
-    font-size: 1.1rem;
-    margin: 5px 0;
-    font-weight: bold;
-}
-
-/* ===== ملاحظة الأسعار ===== */
-.poster-note {
-    background: linear-gradient(135deg, #fff3cd, #ffe8a1);
-    color: #856404;
-    padding: 15px 25px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1rem;
-    border-top: 2px dashed #ffc107;
-    border-bottom: 2px dashed #ffc107;
-}
-
-/* ===== الفوتر ===== */
-.poster-footer {
-    background: var(--dark-blue);
-    color: var(--white);
-    text-align: center;
-    padding: 20px;
-    font-size: 0.9rem;
-    opacity: 0.95;
-}
-
-/* ===== الموبايل ===== */
-@media (max-width: 600px) {
-    body {
-        padding: 10px;
-    }
-    
-    .poster {
-        border-radius: 15px;
-    }
-    
-    .poster-header h1 {
-        font-size: 2rem;
-    }
-    
-    .fish-logo {
-        font-size: 3rem;
-    }
-    
-    .slogan {
-        font-size: 1rem;
-    }
-    
-    .poster-header {
-        padding: 30px 15px 25px;
-    }
-    
-    .poster-image {
-        padding: 15px;
-    }
-    
-    .features {
-        padding: 0 15px 20px;
-        gap: 8px;
-    }
-    
-    .feature {
-        font-size: 0.85rem;
-        padding: 10px 15px;
-    }
-    
-    .poster-fish,
-    .poster-contact {
-        padding: 25px 15px;
-    }
-    
-    .poster-fish h2,
-    .poster-contact h2 {
-        font-size: 1.3rem;
-    }
-    
-    .tag {
-        font-size: 0.9rem;
-        padding: 8px 18px;
-    }
-    
-    .phone-btn {
-        font-size: 1rem;
-        padding: 12px 20px;
-    }
-    
-    .poster-location p {
-        font-size: 1rem;
-    }
-    
-    .poster-note {
-        font-size: 0.9rem;
-    }
+    color: #ffffff;
 }
