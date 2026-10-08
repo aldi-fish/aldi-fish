@@ -1,0 +1,16 @@
+document.addEventListener('DOMContentLoaded', function() {
+var count = localStorage.getItem('visitorCount');
+if (count === null) { count = 1; } else { count = parseInt(count) + 1; }
+localStorage.setItem('visitorCount', count);
+var counterElement = document.getElementById('visitor-count');
+if (!counterElement) return;
+var current = 0;
+var target = count;
+var steps = 40;
+var increment = target / steps;
+var timer = setInterval(function() {
+current += increment;
+if (current >= target) { current = target; clearInterval(timer); }
+counterElement.textContent = Math.floor(current).toLocaleString('ar-EG');
+}, 40);
+});
