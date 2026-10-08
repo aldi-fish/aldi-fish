@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 var count = localStorage.getItem('visitorCount');
-if (count === null) { count = 1; } else { count = parseInt(count) + 1; }
+if (count === null) { count = 76; } else { count = parseInt(count) + 1; }
 localStorage.setItem('visitorCount', count);
 var counterElement = document.getElementById('visitor-count');
 if (!counterElement) return;
