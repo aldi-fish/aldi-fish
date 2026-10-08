@@ -10,18 +10,19 @@
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Tahoma', sans-serif; }
 
 html { background: #0a2540; }
-
 body {
 min-height: 100vh;
 padding: 30px 20px;
-background: linear-gradient(-45deg, #0a2540, #0a3d62, #1e5f8c, #0a2540);
-background-size: 400% 400%;
-background-attachment: fixed;
-animation: bgMove 12s ease infinite;
+background:
+linear-gradient(rgba(10, 37, 64, 0.85), rgba(10, 61, 98, 0.85)),
+url('background.jpg');
+background-size: cover, cover;
+background-position: center, center;
+background-attachment: fixed, fixed;
+background-repeat: no-repeat, no-repeat;
 color: #ffffff;
 overflow-x: hidden;
 }
-
 @keyframes bgMove {
 0% { background-position: 0% 50%; }
 50% { background-position: 100% 50%; }
