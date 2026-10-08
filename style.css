@@ -148,8 +148,8 @@ animation: fadeUp 0.6s ease-out forwards;
 }
 
 .fish-img {
-width: 90px !important;
-height: 90px !important;
+width: 120px !important;
+height: 100px !important;
 background-size: cover !important;
 background-position: center !important;
 background-repeat: no-repeat !important;
