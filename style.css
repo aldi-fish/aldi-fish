@@ -134,7 +134,7 @@ animation: fadeUp 0.6s ease-out forwards;
 .fish-card:nth-child(4) { animation-delay: 1.7s; }
 
 .fish-img {
-width: 160px !important;
+width: 190px !important;
 height: 130px !important;
 background-size: cover !important;
 background-position: center !important;
