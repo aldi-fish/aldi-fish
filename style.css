@@ -342,3 +342,11 @@ border: 1px solid rgba(243, 156, 18, 0.4);
 width: fit-content;
 margin: 0 auto;
 } 
+.utterances-container {
+max-width: 500px;
+margin: 0 auto 40px;
+padding: 20px;
+background: rgba(10, 37, 64, 0.75);
+border-radius: 20px;
+border: 1px solid rgba(243, 156, 18, 0.3);
+} 
