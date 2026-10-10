@@ -37,3 +37,13 @@ if (counterElement) {
 counterElement.textContent = count.toLocaleString('ar-EG');
 }
 });
+function togglePrice(card) {
+var isActive = card.classList.contains('active');
+var allCards = document.querySelectorAll('.fish-card');
+allCards.forEach(function(c) {
+c.classList.remove('active');
+});
+if (!isActive) {
+card.classList.add('active');
+}
+}
