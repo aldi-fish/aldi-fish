@@ -350,3 +350,41 @@ background: rgba(10, 37, 64, 0.75);
 border-radius: 20px;
 border: 1px solid rgba(243, 156, 18, 0.3);
 } 
+.disqus-instructions {
+max-width: 500px;
+margin: 0 auto 20px;
+padding: 20px;
+background: rgba(243, 156, 18, 0.1);
+border-radius: 15px;
+border: 2px dashed rgba(243, 156, 18, 0.4);
+text-align: right;
+direction: rtl;
+}
+
+.instructions-title {
+color: #ffd700;
+font-size: 1.2rem;
+font-weight: bold;
+margin-bottom: 15px;
+text-align: center;
+}
+
+.instructions-steps p {
+color: #ffffff;
+font-size: 0.95rem;
+line-height: 1.8;
+margin: 8px 0;
+}
+
+.instructions-steps strong {
+color: #ffd700;
+}
+
+.instructions-note {
+margin-top: 15px;
+padding-top: 12px;
+border-top: 1px solid rgba(243, 156, 18, 0.3);
+color: #ffd700;
+font-size: 0.9rem;
+text-align: center;
+} 
